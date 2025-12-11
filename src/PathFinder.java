@@ -27,14 +27,15 @@ public class PathFinder {
 
         // 1. INITIALIZATION
         // TODO: Initialize distances array with Integer.MAX_VALUE for all nodes
-         int[] distances = new int[endIndex-startIndex];
-         for(int i = 0; i < distances.length; i++){
+        int size = graph.NUM_NODES;
+        int[] distances = new int[size];
+         for(int i = 0; i < size; i++){
              distances[i] = Integer.MAX_VALUE;
          }
 
         // TODO: Initialize previous array with -1 for all nodes
-        int[] previous = new int[endIndex-startIndex];
-         for(int i = 0; i < previous.length; i++){
+        int[] previous = new int[size];
+         for(int i = 0; i < size; i++){
              previous[i] = -1;
          }
 
@@ -129,11 +130,11 @@ public class PathFinder {
 
         int count = endIndex;
         System.out.println("End ");
-        while((previous[count] != -1)){
-              path.add(previous[count]);
+        while((count != -1)){
+              path.add(count);
               count = previous[count];
       }
-        path = path.reversed();
+        Collections.reverse(path);
         return path;
     }
 

@@ -133,7 +133,7 @@ public class Graph {
         // TODO: If a column has a weight > 0, add that column index to neighbors
         for(int i = 0; i < NUM_NODES; i++){
             if(adjacencyMatrix[nodeIndex][i] > 0){
-                neighbors.add(adjacencyMatrix[nodeIndex][i]);
+                neighbors.add(i);
             }
         }
         return neighbors;
